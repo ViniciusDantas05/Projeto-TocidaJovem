@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Mohave&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+@font-face {
+    font-family: 'Revue';
+    src: url('./Assets/reve.ttf') format('truetype');
+    font-display: swap;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Raleway', sans-serif;
+}
+
+/* HOME */
+header{
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+.menu{
+background-color: white;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 8px 40px;
+box-shadow: black 0px 0px 10px 5px;
+}
+
+.logo img{
+    width: 90px;
+}
+
+.navbar{
+    flex-grow: 0.3;
+}
+
+.option{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-between;
+}
+
+.option a{
+    text-decoration: none;
+    color: black;
+}
+
+.option a:hover,
+.option a:focus{
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    padding: 5px 9px;
+}
+
+.torcida {
+    background: url(Assets/torcidaVILA.jpg) no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: bottom;
+    width: 100%;
+    height: 100vh;
+}
+
+.comeco{
+    background-color: rgba(0, 0, 0, 0.82);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+}
+ 
+.container{
+    z-index: 100000;
+}
+
+.texto .row {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.texto .row .caixa {
+    width: 50%;
+}
+
+.caixa h1{
+    font-size: 5rem;
+    font-family: 'Revue', sans-serif;
+    font-weight: normal;
+    color: white;
+    z-index: 100000;
+}
+
+.caixa p{
+    font-size: 1.3rem;
+    color: white;
+    z-index: 100000;
+}
+
+.texto{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.texto p{
+    font-size: 1.3rem;
+    color: black;
+    z-index: 1000;
+}
+
+.texto h2{
+    font-size: 5rem;
+    color: black;
+    z-index: 1000;
+}
