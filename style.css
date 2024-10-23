@@ -8,7 +8,7 @@
     font-display: swap;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -16,44 +16,53 @@
     font-family: 'Raleway', sans-serif;
 }
 
-/* HOME */
-header{
+#scroll{
     position: fixed;
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 100%;
+    background: rgba(255,255,255, 0.05);
+    z-index: 100;
+}
+
+/* HOME */
+header {
     width: 100%;
     z-index: 100;
 }
 
-.menu{
-background-color: white;
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 8px 40px;
-box-shadow: black 0px 0px 10px 5px;
+.menu {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 40px;
+    box-shadow: black 0px 0px 10px 5px;
 }
 
-.logo img{
-    width: 90px;
+.logo img {
+    width: 65px;
 }
 
-.navbar{
+.navbar {
     flex-grow: 0.3;
 }
 
-.option{
+.option {
     display: flex;
     flex-direction: row;
     list-style: none;
     justify-content: space-between;
 }
 
-.option a{
+.option a {
     text-decoration: none;
     color: black;
 }
 
 .option a:hover,
-.option a:focus{
+.option a:focus {
     background-color: black;
     color: white;
     border-radius: 20px;
@@ -69,7 +78,7 @@ box-shadow: black 0px 0px 10px 5px;
     height: 100vh;
 }
 
-.comeco{
+.comeco {
     background-color: rgba(0, 0, 0, 0.82);
     position: relative;
     display: flex;
@@ -79,52 +88,310 @@ box-shadow: black 0px 0px 10px 5px;
     width: 100%;
     height: 100vh;
 }
- 
-.container{
-    z-index: 100000;
-}
 
-.texto .row {
-    justify-content: center;
+.caixa {
     align-items: center;
-    width: 100%;
+    justify-content: center;
 }
 
-.texto .row .caixa {
-    width: 50%;
-}
-
-.caixa h1{
+.caixa h1 {
     font-size: 5rem;
     font-family: 'Revue', sans-serif;
     font-weight: normal;
     color: white;
-    z-index: 100000;
+    z-index: 100;
 }
 
-.caixa p{
+.caixa p {
     font-size: 1.3rem;
     color: white;
-    z-index: 100000;
+    z-index: 100;
 }
 
-.texto{
+.texto {
     padding-top: 100px;
     padding-bottom: 100px;
-    background:white;
+    background: white;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
-.texto p{
-    font-size: 1.3rem;
-    color: black;
-    z-index: 1000;
+
+.texto .ourHistory {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 70%;
 }
 
-.texto h2{
+.texto p {
+    font-size: 1.3rem;
+    color: black;
+    z-index: 100;
+}
+
+.texto h2 {
     font-size: 5rem;
     color: black;
+    z-index: 100;
+}
+
+/* From Uiverse.io by cssbuttons-io */
+.historia {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    background: transparent;
+    padding: 0;
+    font-size: inherit;
+    font-family: inherit;
+}
+
+.historia.learn-more {
+    width: 12rem;
+    height: auto;
+}
+
+.historia.learn-more .circle {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: relative;
+    display: block;
+    margin: 0;
+    width: 3rem;
+    height: 3rem;
+    background: #282936;
+    border-radius: 1.625rem;
+}
+
+.historia.learn-more .circle .icon {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: #fff;
+}
+
+.historia.learn-more .circle .icon.arrow {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    left: 0.625rem;
+    width: 1.125rem;
+    height: 0.125rem;
+    background: none;
+}
+
+.historia.learn-more .circle .icon.arrow::before {
+    position: absolute;
+    content: "";
+    top: -0.29rem;
+    right: 0.0625rem;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-top: 0.125rem solid #fff;
+    border-right: 0.125rem solid #fff;
+    transform: rotate(45deg);
+}
+
+.historia.learn-more .button-text {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.75rem 0;
+    margin: 0 0 0 1.85rem;
+    color: #282936;
+    font-weight: 700;
+    line-height: 1.6;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.historia:hover .circle {
+    width: 100%;
+}
+
+.historia:hover .circle .icon.arrow {
+    background: #fff;
+    transform: translate(1rem, 0);
+}
+
+.historia:hover .button-text {
+    color: #fff;
+}
+
+/* Historia*/
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+ul {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.nossa .santos {
+    list-style: none;
+    margin-bottom: 50px;
+
+}
+
+ul li input {
+    position: relative;
     z-index: 1000;
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+}
+
+ul li .slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+ul li .slider .face {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: #fff;
+}
+
+ul li .slider .face.face1 {
+    left: 0;
+    transition: transform 1s;
+    transform-origin: top;
+    transform: rotateX(90deg);
+}
+
+ul li .slider .face.face1 img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+ul li .slider .face.face2 {
+    right: 0;
+    transition: transform 1s;
+    transform-origin: bottom;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotateX(90deg);
+}
+
+ul li .slider .face.face2 h2 {
+    font-size: 4em;
+    color: #333;
+}
+
+ul li .slider .face.face2 p {
+    font-size: 1.1em;
+    color: #333;
+    line-height: 1.7em;
+}
+
+ul li input[type="radio"]:checked ~ .slider .face.face1 {
+    transform: rotateX(0deg);
+    transition: transform 1s;
+    transform-origin: bottom;
+}
+
+ul li input[type="radio"]:checked ~ .slider .face.face2 {
+    transform: rotateX(0deg);
+    transition: transform 1s;
+    transform-origin: top;
+}
+
+.decricao {
+    display: flex;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.coluna-esquerda {
+    flex: 1;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #000;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: left;
+    padding-right: 20px;
+}
+
+.coluna-direita {
+    flex: 1;
+    font-size: 1em;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.jovem {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+}
+
+.torcida2 {
+    width: 80%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Logo da torcida sobreposta aos textos */
+.logo2 {
+    width: 150px;
+}
+
+/* Estilo do título principal */
+.title {
+    font-size: 1.8em;
+    font-family: 'Revue', sans-serif;
+    margin-bottom: 20px;
+    z-index: 2; /* Garante que o texto ainda esteja visível */
+    color: #fff;
+}
+
+/* Estilo do subtítulo */
+.subtitle {
+    font-size: 1em;
+    line-height: 1.5;
+    z-index: 2; /* Garante visibilidade sobre o fundo */
+    color: #fff;
 }
