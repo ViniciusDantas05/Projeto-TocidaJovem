@@ -21,7 +21,7 @@
             </div>
         </nav>
     </header>
-    <section>
+    <section class="hidden-item">
         <div class="slider">
             <ul class="nossa">
                 <li class="santos">
@@ -33,7 +33,7 @@
                         <div class="face face2">
                             <div class="content">
                                 <h2>Nossa Historia</h2>
-                                <p>A Torcida Jovem do Santos Futebol Clube é mais do que uma torcida organizada; é um movimento social, cultural e esportivo que sempre esteve presente na vida do clube e na sociedade. Desde sua fundação, em 26 de setembro de 1969 , sua trajetória se confunde com a do próprio Santos. Hoje, é impossível pensar no clube sem lembrar da força e presença da Torcida Jovem.
+                                <p>A Torcida Jovem do Santos Futebol Clube é mais do que uma torcida organizada; é um movimento social, cultural e esportivo que sempre esteve presente na vida do clube e na sociedade. Desde sua fundação, em 26 de setembro de 1969 , sua trajetória se confunde com a do próprio Santos. Hoje, é impossível pensar no clube sem lembrar da força e presença da Torcida Jovem.Recentemente passamos pelo mommento mais dificil de nossa historia,pela primera vez na historia o Santos Futebol Clube foi rebaixado pra segunda divisão,mas mesmo com todas as adversidades a Torcida Jovem JAMIAS deixou de apoiar o clube.
                                 </p>
                             </div>
                         </div>
@@ -48,9 +48,9 @@
                         <div class="face face2">
                             <div class="content">
                                 <h2>Origem e Fundadores</h2>
-                                <p>Nos anos de 1966 a 1968 , quando o Santos ainda não contava com uma grande torcida na capital paulista, um grupo de jovens apaixonados pelo tempo começou a marcar presença em todos os jogos realizados em São Paulo. Esses encontros espontâneos se fortaleceram, ajudando o grupo a enfrentar outras torcidas com união e entusiasmo.
+                                <p>Nos anos de 1966 a 1968 , quando o Santos ainda não contava com uma grande torcida na capital paulista, um grupo de jovens apaixonados pelo Santos começou a marcar presença em todos os jogos realizados em São Paulo. Esses encontros espontâneos se fortaleceram, ajudando o grupo a enfrentar outras torcidas com união e entusiasmo.
     
-                                    A fundação oficial ocorreu em 1969 , após uma viagem vitoriosa do Santos pela Europa. Na casa de Cosmo Damião , no bairro do Brás, em São Paulo, 13 jovens corajosos – entre eles Cosmo, Alemão, Tobogã, Menezes, Celso Jatene e Zé Miguel – criaram a primeira torcida uniformizada e organizada do Santos . Desde então, a Torcida Jovem manteve o lema de acompanhar o tempo em qualquer lugar, demonstrando amor incondicional.
+                                    A fundação oficial ocorreu em 1969 , após uma viagem vitoriosa do Santos pela Europa. Na casa de Cosmo Damião , no bairro do Brás, em São Paulo, 13 jovens corajosos – entre eles Cosmo, Alemão, Tobogã, Menezes, Celso Jatene e Zé Miguel – criaram a primeira torcida uniformizada e organizada do Santos . Desde então, a Torcida Jovem manteve o lema de acompanhar o Santos em qualquer lugar, demonstrando amor incondicional.
                                 </p>
                             </div>
                         </div>
@@ -91,27 +91,27 @@
             </ul>
         </div>
     </section>
-    <section><br><br><br><br>
+    <section class="hidden-item"><br><br><br><br>
         <div class="decricao">
-            <div class="coluna-esquerda">
+            <div class="coluna-esquerda ">
                 <p>Vamos descrever algumas passagens, onde nossa entidade esteve verdadeiramente identificada.</p>
             </div>
-            <div class="coluna-direita">
+            <div class="coluna-direita ">
                 <p>Campanha de anistia ampla, geral e irrestrita, onde inclusive nosso companheiro Cosmo Damião foi indicado coordenador. Na memorial campanha das diretas já, nossa bateria nota 10 esteve presente em todos os comícios na capital de São Paulo.</p>
                 <p>Participamos também da luta pela autonomia política da cidade de Santos. Fomos um dos fundadores da A.T.O.E.S.P. (Associação das Torcidas Organizadas de São Paulo) e da A.T.O.S. (Associação das Torcidas Organizadas de Santos). No Impeachment do Collor, participamos das grandes passeatas na capital de São Paulo com bandeiras e a nossa bateria nota 10. Instalados na nossa antiga sede desde 1978, participamos juntos com os moradores do Bixiga de várias reuniões para reivindicações das melhorias do bairro por exemplo: O cercado e a construção do Play Ground da Praça Pérola Byington; campanha de Natal das crianças pobres do Bixiga; e várias outras.</p>
             </div>
         </div>
     </section>
     <section>
-        <div class="jovem">
-            <div class="torcida2">
+        <div class="jovem ">
+            <div class="torcida2 ">
                 <img src="Assets/logo.png" alt="Logo Torcida Jovem" class="logo2">
                 <br>
             <h1 class="title">
                 Queremos mostrar a todo nosso quadro de associados que ao longo desses anos, 
                 sempre participamos ao lado da sociedade e das lutas pelo bem estar de todos.
             </h1>
-            <p class="subtitle">
+            <p class="subtitle ">
                 Os nossos 50 anos de glórias só foram conseguidos com a união de todos e o idealismo 
                 de todos aqueles que amam a TORCIDA JOVEM e constroem algo em prol do SANTOS FC, 
                 sempre mantendo a tradição pelos interesses do torcedor que são eles: estudantes, 
@@ -120,5 +120,36 @@
             </div>
         </div>
     </section>
+    <script>
+        const hiddenItems = document.querySelectorAll('.hidden-item')
+    //Descomente a linha abaixo e abra o console para ver
+    // console.log(hiddenItems)
+
+    // Aqui eu chamo a função de "observar"
+    const observerCallback = (entries, observer) => {
+        entries.forEach(entry => {
+            // Aqui eu verifico se o objeto observado apareceu na tela
+            if (entry.isIntersecting) {
+                // caso sim, eu mudo a classe dele para "show"
+                entry.target.classList.add('show')
+                observer.unobserve(entry.target) // Para de observar o item após ele ficar visível
+            }
+        })
+    }
+
+     // Configuração do observer
+     const observerOptions = {
+        rootMargin: '0px',
+        threshold: 0.1 // Ativa quando 10% do item estiver visível
+    }
+
+    // Cria uma nova instância do IntersectionObserver
+    const observer = new IntersectionObserver(observerCallback, observerOptions)
+
+    // Aplica o observer para cada item da lista
+    hiddenItems.forEach(item => {
+        observer.observe(item)
+    });
+    </script>
 </body>
 </html>

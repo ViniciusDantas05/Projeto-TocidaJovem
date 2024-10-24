@@ -18,7 +18,7 @@
                 <ul class="option">
                     <li><a class="link" href="#home">Home</a></li>
                     <li><a class="link" href="#nossahistoria">Nossa Historia</a></li>
-                    <li><a class="link" href="#projetosocial">Projeto Social</a></li>
+                    <li><a class="link" href="#projetoSocial">Projeto Social</a></li>
                     <li><a class="link" href="#quiz">Quiz</a></li>
                     <li><a class="link" href="#login">Login</a></li>
                 </ul>
@@ -31,7 +31,7 @@
             <div class="conteiner">
                 <div class="row">
                     <div class="caixa">
-                        <h1 class="fade">Torcida Jovem Do Santos</h1>
+                        <h1 class="fade hidden-item">Torcida Jovem Do Santos</h1>
                         <p>Com o Santos onde e como ele estiver</p>
                     </div>
                 </div>
@@ -39,7 +39,7 @@
         </div>
     </section>
     <section class="texto" id="nossahistoria">
-        <div class="ourHistory">
+        <div class="ourHistory hidden-item">
             <div class="our">
                 <div class="caixa reveal">
                     <h2>Nossa Historia</h2><br><br><br>
@@ -59,6 +59,54 @@
                 </div>
             </div>
     </section>
-    
+    <section class="texto" id="projetoSocial">
+        <div class="ProjetoSocio hidden-item">
+            <div class="our">
+                <div class="caixa reveal">
+                    <h2>Projeto Social</h2><br><br><br>
+                    <p>A Torcida Jovem é pioneira em Projetos Sociais entre as Torcidas Organizadas. Cansada de tantas injustiças sociais a TJ continua empenhada em transformar a realidade das pessoas.
+                    </p><br><br>
+                    <div class="social">
+                        <button class="historia  learn-more" onclick="window.location.href='projetoSocial.html';">
+                            <span class="circle" aria-hidden="true">
+                                <span class="icon arrow"></span>
+                            </span>
+                            <span class="button-text">Saiba Mais</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <script>
+         const hiddenItems = document.querySelectorAll('.hidden-item')
+    //Descomente a linha abaixo e abra o console para ver
+    // console.log(hiddenItems)
+
+    // Aqui eu chamo a função de "observar"
+    const observerCallback = (entries, observer) => {
+        entries.forEach(entry => {
+            // Aqui eu verifico se o objeto observado apareceu na tela
+            if (entry.isIntersecting) {
+                // caso sim, eu mudo a classe dele para "show"
+                entry.target.classList.add('show')
+                observer.unobserve(entry.target) // Para de observar o item após ele ficar visível
+            }
+        })
+    }
+
+    // Configuração do observer
+    const observerOptions = {
+        rootMargin: '0px',
+        threshold: 0.1 // Ativa quando 10% do item estiver visível
+    }
+
+    // Cria uma nova instância do IntersectionObserver
+    const observer = new IntersectionObserver(observerCallback, observerOptions)
+
+    // Aplica o observer para cada item da lista
+    hiddenItems.forEach(item => {
+        observer.observe(item)
+    });
+    </script>
 </body>
 </html>
